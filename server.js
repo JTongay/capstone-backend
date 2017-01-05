@@ -15,6 +15,7 @@ const knex = require('knex')(config);
 const bodyParser = require('body-parser');
 
 // Routes
+const users = require('./routes/users.route')
 
 // Use Middlewares
 // app.set('view engine', 'ejs');
@@ -24,6 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Use Routes
+
+app.use(users);
 
 app.listen(port, function () {
   console.log('hello from', port);
