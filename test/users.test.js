@@ -62,25 +62,65 @@ describe('Users', function () {
             if(err){
               done(err)
             }
+            console.log(res.body);
             expect(res.body).to.exist;
-            expect(res.body.status).to.equal('You Did It!')
+            expect(res.body.username).to.equal('test1')
             done();
           })
  })
  it('should not register a new user if that email already exists', function (done) {
    request.post("/api/users/signup")
-          .expect(200)
+          // .expect(200)
           .send({
+            id: 809,
             email: 'user1@gmail.com',
             password_digest: 'password',
             username: 'user1'
           })
           .end((err,res)=>{
             if(err){
-              done(err)
+              done()
+            }
+            console.log(res.body);
+            expect(res.body).to.exist;
+            // expect(res.body.status).to.equal('Sup')
+            done();
+          })
+ })
+ it('should send an error if one field is blank', function (done) {
+   request.post("/api/users/signup")
+          // .expect(200)
+          .send({
+            id: 9,
+            email: '',
+            password_digest: 'password',
+            username: 'booyah'
+          })
+          .end((err,res)=>{
+            if(err){
+              done()
             }
             expect(res.body).to.exist;
-            expect(res.body.status).to.equal('Email Taken')
+            expect(res.body.errors[0]).to.equal("Email can't be blank")
+            done();
+          })
+ })
+ it('should send an error if multiple fields are blank', function (done) {
+   request.post("/api/users/signup")
+          // .expect(200)
+          .send({
+            id: 9,
+            email: '',
+            password_digest: 'password',
+            username: ''
+          })
+          .end((err,res)=>{
+            if(err){
+              done()
+            }
+            expect(res.body).to.exist;
+            expect(res.body.errors[0]).to.equal("Username can't be blank")
+            expect(res.body.errors[1]).to.equal("Email can't be blank")
             done();
           })
  })
