@@ -62,7 +62,6 @@ describe('Users', function () {
             if(err){
               done(err)
             }
-            console.log(res.body);
             expect(res.body).to.exist;
             expect(res.body.username).to.equal('test1')
             done();
@@ -83,7 +82,7 @@ describe('Users', function () {
             }
             console.log(res.body);
             expect(res.body).to.exist;
-            // expect(res.body.status).to.equal('Sup')
+            expect(res.body.error).to.equal('Try again')
             done();
           })
  })

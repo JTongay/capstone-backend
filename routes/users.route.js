@@ -35,9 +35,9 @@ router.post('/signup', (req, res, next)=>{
       errors: errors
     })
   } else {
-    knex('users').where('email', usernameReq).count().first().then((result)=>{
+    knex('users').where('email', emailReq).first().then((result)=>{
       console.log(result);
-      if(result.count === "0"){
+      if(!result){
         let hashed = bcrypt.hashSync(req.body.password_digest, 12);
         knex('users').insert({
           username: usernameReq,
@@ -48,8 +48,6 @@ router.post('/signup', (req, res, next)=>{
         .then((users)=>{
           const user = users[0];
           const token = jwt.sign({id: user.id}, process.env.JWT_SECRET);
-          console.log(token);
-
           res.json({
             id: user.id,
             username: user.username,
