@@ -19,5 +19,34 @@ router.get('/:id', (req, res, next)=>{
   })
 })
 
+router.post('/signup', (req, res, next)=>{
+
+  let emailReq = req.body.email;
+  let usernameReq = req.body.username;
+
+  knex('users').where('email', emailReq).first().then((user)=>{
+    if(!user){
+      let hashed = bcrypt.hashSync(req.body.password_digest, 12);
+      knex('users').insert({
+        username: usernameReq,
+        password_digest: hashed,
+        email: emailReq
+      }).then(()=>{
+        res.json({
+          status: 'You Did It!'
+        })
+      })
+
+    } else {
+      res.json({
+        status: 'Email Taken'
+      })
+    }
+
+  })
+
+
+})
+
 
 module.exports = router;
