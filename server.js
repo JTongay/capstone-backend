@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 
 // Use Routes
 
-app.use(users);
+app.use('/api/users', users);
 
 app.listen(port, function () {
   console.log('hello from', port);
