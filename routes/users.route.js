@@ -50,6 +50,7 @@ router.post('/signup', (req, res, next)=>{
           res.json({
             id: user.id,
             username: user.username,
+            role: user.role,
             token: token
           })
         })
@@ -88,6 +89,7 @@ router.post('/login', (req, res, next)=>{
             res.json({
               id: result.id,
               username: result.username,
+              role: result.role,
               token: token
             })
           } else {
@@ -100,8 +102,19 @@ router.post('/login', (req, res, next)=>{
     })
   }
 
-
 })
+
+// router.patch('/:id/edit', (req, res, next)=>{
+//
+// })
+
+// router.delete('/:id/delete', (req, res, next)=>{
+//
+// })
+
+// router.delete('/logout', (req, res, next)=>{
+//
+// })
 
 
 module.exports = router;

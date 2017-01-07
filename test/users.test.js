@@ -224,10 +224,116 @@ describe( 'Users', function () {
                 } )
         } )
     } )
-    xdescribe('PATCH routes', function () {
-     it('should edit a users username', function (done) {
-
-     })
+  describe( 'PATCH routes', function () {
+    afterEach((done)=>{
+      knex('users').where('id', 1).update({
+          username: 'user1',
+          password_digest: 'password',
+          email: 'user1@gmail.com',
+          role: 'user'
+      }).then(()=>{
+        done();
+      })
     })
+    it( 'should edit a users username', function ( done ) {
+      request.patch("/api/users/1/edit")
+              .send( {
+                username: 'user1edited'
+              } )
+              .end((err, res)=>{
+                if(err){
+                  done(err)
+                }
+                console.log(res.body);
+                expect(res.body).to.exist;
+                expect(res.body.username).to.equal('user1edited');
+                expect(res.body.email).to.equal('user1@gmail.com');
+                done();
+              })
+    } )
+    it( 'should edit a users email', function ( done ) {
+      request.patch("/api/users/1/edit")
+              .send( {
+                email: 'user1edited@gmail.com'
+              } )
+              .end((err, res)=>{
+                if(err){
+                  done(err)
+                }
+                console.log(res.body);
+                expect(res.body).to.exist;
+                expect(res.body.username).to.equal('user1');
+                expect(res.body.email).to.equal('user1edited@gmail.com');
+                done();
+              })
+    } )
+    it( 'should edit a users password', function ( done ) {
+      request.patch("/api/users/1/edit")
+              .send( {
+                password: 'password1'
+              } )
+              .end((err, res)=>{
+                if(err){
+                  done(err)
+                }
+                console.log(res.body);
+                expect(res.body).to.exist;
+                expect(res.body.password).to.exist;
+                done();
+              })
+    } )
+    it( 'should edit a users role', function ( done ) {
+      request.patch("/api/users/1/edit")
+              .send( {
+                role: 'admin'
+              } )
+              .end((err, res)=>{
+                if(err){
+                  done(err)
+                }
+                console.log(res.body);
+                expect(res.body).to.exist;
+                expect(res.body.role).to.equal('admin');
+                expect(res.body.username).to.equal('user1');
+                expect(res.body.email).to.equal('user1@gmail.com');
+                done();
+              })
+    } )
+  } )
+  describe('DELETE routes', function () {
+    beforeEach((done)=>{
+      knex('users').insert({
+          username: 'deleteme',
+          password_digest: 'password',
+          email: 'deleteme@gmail.com',
+          role: 'user'
+      }).then(()=>{
+        done();
+      })
+    })
+    afterEach((done)=>{
+      knex('users').where('username', 'deleteme').first().del().then(()=>{
+        done();
+      })
+    })
+   it('should delete a user', function (done) {
+     request.delete('/api/user/1/delete')
+            .send({
+              username: 'deleteme',
+              password_digest: 'password',
+              email: 'deleteme@gmail.com',
+              role: 'user'
+            })
+            .end((err, res)=>{
+              if(err){
+                done(err)
+              }
+              console.log(res.body);
+              expect(res.body).to.exist;
+              expect(res.body.username).to.be("deleteme")
+              done();
+            })
+   })
+  })
 
 } )
