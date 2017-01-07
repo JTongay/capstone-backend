@@ -36,7 +36,6 @@ router.post('/signup', (req, res, next)=>{
     })
   } else {
     knex('users').where('email', emailReq).first().then((result)=>{
-      console.log(result);
       if(!result){
         let hashed = bcrypt.hashSync(req.body.password_digest, 12);
         knex('users').insert({
@@ -61,6 +60,46 @@ router.post('/signup', (req, res, next)=>{
       }
     })
   }
+
+})
+
+router.post('/login', (req, res, next)=>{
+  let emailReq = req.body.email;
+
+  var errors = [];
+
+  if(!emailReq || !emailReq.trim()) errors.push("Email can't be blank");
+  if(!req.body.password_digest || !req.body.password_digest.trim()) errors.push("Password can't be blank");
+
+  if(errors.length){
+    res.status(422).json({
+      errors: errors
+    })
+  } else {
+    knex('users').where('email', emailReq).first().then((result)=>{
+      if(!result){
+        res.json({
+          errors: "No Email Found"
+        })
+      } else {
+        bcrypt.compare(req.body.password_digest, result.password_digest, (err, pass)=>{
+          if(pass){
+            const token = jwt.sign({id: result.id}, process.env.JWT_SECRET);
+            res.json({
+              id: result.id,
+              username: result.username,
+              token: token
+            })
+          } else {
+            res.json({
+              errors: "Try again"
+            })
+          }
+        })
+      }
+    })
+  }
+
 
 })
 
