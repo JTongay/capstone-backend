@@ -104,9 +104,13 @@ router.post('/login', (req, res, next)=>{
 
 })
 
-// router.patch('/:id/edit', (req, res, next)=>{
-//
-// })
+router.patch('/:id/edit', (req, res, next)=>{
+
+  let userParams = req.params.id;
+
+  knex('users')
+
+})
 
 // router.delete('/:id/delete', (req, res, next)=>{
 //

@@ -270,7 +270,7 @@ describe( 'Users', function () {
     it( 'should edit a users password', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
-                password: 'password1'
+                password_digest: 'password1'
               } )
               .end((err, res)=>{
                 if(err){
@@ -330,7 +330,7 @@ describe( 'Users', function () {
               }
               console.log(res.body);
               expect(res.body).to.exist;
-              expect(res.body.username).to.be("deleteme")
+              expect(res.body.username).to.equal("deleteme")
               done();
             })
    })
