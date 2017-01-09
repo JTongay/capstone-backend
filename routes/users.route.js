@@ -12,6 +12,13 @@ router.get('/', (req, res, next)=>{
   })
 })
 
+router.get('/logout', (req, res, next)=>{
+
+  console.log(req);
+  // res.json(req.headers)
+
+})
+
 router.get('/:id', (req, res, next)=>{
   let userId = req.params.id;
   knex('users').where('id', userId).first().then((user)=>{
@@ -110,27 +117,30 @@ router.patch('/:id/edit', (req, res, next)=>{
   const usernameReq = req.body.username;
   const passwordReq = req.body.password_digest;
   const emailReq = req.body.email;
+  const roleReq = req.body.role;
   const hashed = bcrypt.hashSync(passwordReq, 12);
 
-  knex('users').where('id', userParams).update({
+  knex('users').where('id', userParams).first().update({
     username: usernameReq,
     password_digest: hashed,
-    email: emailReq
+    email: emailReq,
+    role: roleReq
   }).returning('*').then((user)=>{
-    console.log(user, "returning user");
-    console.log(hashed);
     res.json(user)
   })
 
 })
 
-// router.delete('/:id/delete', (req, res, next)=>{
-//
-// })
+router.delete('/:id/delete', (req, res, next)=>{
 
-// router.delete('/logout', (req, res, next)=>{
-//
-// })
+  const userParams = req.params.id;
+
+  knex('users').where('id', userParams).first().returning('*').del().then((user)=>{
+    res.json(user)
+  })
+
+})
+
 
 
 module.exports = router;

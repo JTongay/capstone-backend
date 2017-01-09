@@ -2,8 +2,13 @@
 
 const expect = require( 'chai' ).expect;
 const app = require( '../server' );
-const request = require( 'supertest' )( app );
+const supertest = require( 'supertest' );
+const request = supertest.agent(app)
 const knex = require( '../db/knex' );
+const session = require('supertest-session');
+
+var dummySession;
+var authenticatedSession;
 
 describe( 'The Test', function () {
     it( 'should pass the damn test', function () {
@@ -138,7 +143,6 @@ describe( 'Users', function () {
                     if ( err ) {
                         done()
                     }
-                    console.log( res.body );
                     expect( res.body ).to.exist;
                     expect( res.body.token).to.exist;
                     expect( res.body.username ).to.equal( 'user1' );
@@ -157,7 +161,6 @@ describe( 'Users', function () {
                     if ( err ) {
                         done()
                     }
-                    console.log( res.body );
                     expect( res.body ).to.exist;
                     expect( res.body.errors).to.exist;
                     expect( res.body.errors ).to.equal( 'Try again' );
@@ -176,7 +179,6 @@ describe( 'Users', function () {
                     if ( err ) {
                         done()
                     }
-                    console.log( res.body );
                     expect( res.body ).to.exist;
                     expect( res.body.errors).to.exist;
                     expect( res.body.errors ).to.equal( 'No Email Found' );
@@ -195,7 +197,6 @@ describe( 'Users', function () {
                     if ( err ) {
                         done()
                     }
-                    console.log( res.body );
                     expect( res.body ).to.exist;
                     expect( res.body.errors).to.exist;
                     expect( res.body.errors[0] ).to.equal( "Email can't be blank" );
@@ -214,7 +215,6 @@ describe( 'Users', function () {
                     if ( err ) {
                         done()
                     }
-                    console.log( res.body );
                     expect( res.body ).to.exist;
                     expect( res.body.errors ).to.exist;
                     expect( res.body.errors ).to.have.length(2)
@@ -234,7 +234,7 @@ describe( 'Users', function () {
         done();
       })
     })
-    it.only( 'should edit a users username', function ( done ) {
+    it( 'should edit a users username', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
                 username: 'user1edited',
@@ -246,58 +246,63 @@ describe( 'Users', function () {
                 if(err){
                   done(err)
                 }
-                // console.log(res.body);
                 expect(res.body).to.exist;
-                expect(res.body.username).to.equal('user1edited');
-                expect(res.body.email).to.equal('user1@gmail.com');
+                expect(res.body[0].username).to.equal('user1edited');
+                expect(res.body[0].email).to.equal('user1@gmail.com');
                 done();
               })
     } )
     it( 'should edit a users email', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
-                email: 'user1edited@gmail.com'
+                username: 'user1',
+                email: 'user1edited@gmail.com',
+                password_digest: 'password',
+                role: 'user'
               } )
               .end((err, res)=>{
                 if(err){
                   done(err)
                 }
-                console.log(res.body);
-                expect(res.body).to.exist;
-                expect(res.body.username).to.equal('user1');
-                expect(res.body.email).to.equal('user1edited@gmail.com');
+                expect(res.body[0]).to.exist;
+                expect(res.body[0].username).to.equal('user1');
+                expect(res.body[0].email).to.equal('user1edited@gmail.com');
                 done();
               })
     } )
     xit( 'should edit a users password', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
-                password_digest: 'password1'
+                username: 'user1',
+                password_digest: 'password1',
+                email: 'user1@gmail.com',
+                role: 'user'
               } )
               .end((err, res)=>{
                 if(err){
                   done(err)
                 }
-                console.log(res.body);
-                expect(res.body).to.exist;
-                expect(res.body.password).to.exist;
+                expect(res.body[0]).to.exist;
+                expect(res.body[0].password).to.exist;
                 done();
               })
     } )
     it( 'should edit a users role', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
+                username: 'user1',
+                password_digest: 'password',
+                email: 'user1@gmail.com',
                 role: 'admin'
               } )
               .end((err, res)=>{
                 if(err){
                   done(err)
                 }
-                console.log(res.body);
-                expect(res.body).to.exist;
-                expect(res.body.role).to.equal('admin');
-                expect(res.body.username).to.equal('user1');
-                expect(res.body.email).to.equal('user1@gmail.com');
+                expect(res.body[0]).to.exist;
+                expect(res.body[0].role).to.equal('admin');
+                expect(res.body[0].username).to.equal('user1');
+                expect(res.body[0].email).to.equal('user1@gmail.com');
                 done();
               })
     } )
@@ -318,7 +323,7 @@ describe( 'Users', function () {
         done();
       })
     })
-   it('should delete a user', function (done) {
+   xit('should delete a user', function (done) {
      request.delete('/api/user/1/delete')
             .send({
               username: 'deleteme',
@@ -334,6 +339,32 @@ describe( 'Users', function () {
               expect(res.body).to.exist;
               expect(res.body.username).to.equal("deleteme")
               done();
+            })
+   })
+  })
+  xdescribe('Logout', function () {
+
+   it('Should log out a logged in user', function (done) {
+     request.post('/api/users/login')
+            .send({
+              username: 'user1',
+              password_digest: 'password',
+              email: 'user1@gmail.com'
+            })
+            .end((err, res)=>{
+              if(err){
+                return done(err)
+              }
+              console.log(res.headers);
+              request.get('/api/users/logout')
+                    .end((err, res)=>{
+                      if(err){
+                        return done(err)
+                      }
+                      console.log(res);
+                      expect(res.body).to.exist;
+                      done()
+                    })
             })
    })
   })

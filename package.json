@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test mocha",
-    "start": "node server.js",
+    "start": "nodemon",
     "heroku-postbuild": "knex migrate:latest"
   },
   "author": "",
@@ -17,11 +17,14 @@
     "express": "^4.14.0",
     "jsonwebtoken": "^7.2.1",
     "knex": "^0.12.6",
-    "pg": "^6.1.2"
+    "pg": "^6.1.2",
+    "request": "^2.79.0",
+    "twitter": "^1.7.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "supertest-session": "^3.0.0"
   }
 }
