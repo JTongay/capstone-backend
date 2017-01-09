@@ -228,23 +228,25 @@ describe( 'Users', function () {
     afterEach((done)=>{
       knex('users').where('id', 1).update({
           username: 'user1',
-          password_digest: 'password',
           email: 'user1@gmail.com',
           role: 'user'
       }).then(()=>{
         done();
       })
     })
-    it( 'should edit a users username', function ( done ) {
+    it.only( 'should edit a users username', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
-                username: 'user1edited'
+                username: 'user1edited',
+                email: 'user1@gmail.com',
+                password_digest: 'password',
+                role: 'user'
               } )
               .end((err, res)=>{
                 if(err){
                   done(err)
                 }
-                console.log(res.body);
+                // console.log(res.body);
                 expect(res.body).to.exist;
                 expect(res.body.username).to.equal('user1edited');
                 expect(res.body.email).to.equal('user1@gmail.com');
@@ -267,7 +269,7 @@ describe( 'Users', function () {
                 done();
               })
     } )
-    it( 'should edit a users password', function ( done ) {
+    xit( 'should edit a users password', function ( done ) {
       request.patch("/api/users/1/edit")
               .send( {
                 password_digest: 'password1'

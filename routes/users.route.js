@@ -106,9 +106,21 @@ router.post('/login', (req, res, next)=>{
 
 router.patch('/:id/edit', (req, res, next)=>{
 
-  let userParams = req.params.id;
+  const userParams = req.params.id;
+  const usernameReq = req.body.username;
+  const passwordReq = req.body.password_digest;
+  const emailReq = req.body.email;
+  const hashed = bcrypt.hashSync(passwordReq, 12);
 
-  knex('users')
+  knex('users').where('id', userParams).update({
+    username: usernameReq,
+    password_digest: hashed,
+    email: emailReq
+  }).returning('*').then((user)=>{
+    console.log(user, "returning user");
+    console.log(hashed);
+    res.json(user)
+  })
 
 })
 
