@@ -18,6 +18,8 @@ const bodyParser = require('body-parser');
 // Routes
 const users = require('./routes/users.route')
 const genres = require('./routes/genres.route')
+const topics = require('./routes/topics.route')
+const subjects = require('./routes/subjects.route')
 
 // Use Middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,8 +34,9 @@ app.use(function(req, res, next) {
 // Use Routes
 
 app.use('/api/users', users);
-app.use('/api/genres', genres);
-
+app.use('/api/users/:user_id/genres', genres);
+app.use('/api/users/:user_id/genres/:genre_id/topics', topics);
+app.use('/api/users/:user_id/genres/:genre_id/topics/:topic_id/subjects', subjects);
 
 app.listen(port, function () {
   console.log('hello from', port);

@@ -13,7 +13,7 @@ const session = require( 'supertest-session' );
 //  })
 // })
 
-describe.only( 'Genres Tests', function () {
+xdescribe( 'Genres Tests', function () {
     describe( 'GET routes', function () {
 
         it( 'should get all of the genres', function ( done ) {
