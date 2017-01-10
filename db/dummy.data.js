@@ -302,6 +302,398 @@ const data = {
       name: 'Burger King',
       score: -72,
       topic_id: 4,
+      user_id: 2
+    },
+    {
+      id: 17,
+      name: 'Popeyes',
+      score: 72,
+      topic_id: 5,
+      user_id: 1
+    },
+    {
+      id: 18,
+      name: 'Chick-fil-a',
+      score: 52,
+      topic_id: 5,
+      user_id: 3
+    },
+    {
+      id: 19,
+      name: 'KFC',
+      score: 12,
+      topic_id: 5,
+      user_id: 1
+    },
+    {
+      id: 20,
+      name: 'Churchs',
+      score: -32,
+      topic_id: 5,
+      user_id: 1
+    },
+    {
+      id: 21,
+      name: 'Cinnamon Toast Crunch',
+      score: 112,
+      topic_id: 6,
+      user_id: 1
+    },
+    {
+      id: 22,
+      name: 'Golden Grahams',
+      score: 82,
+      topic_id: 6,
+      user_id: 3
+    },
+    {
+      id: 23,
+      name: 'Golden Ohs',
+      score: 12,
+      topic_id: 6,
+      user_id: 1
+    },
+    {
+      id: 24,
+      name: 'Raisin Bran',
+      score: -92,
+      topic_id: 6,
+      user_id: 1
+    },
+    {
+      id: 25,
+      name: 'Van Halen',
+      score: 67,
+      topic_id: 7,
+      user_id: 1
+    },
+    {
+      id: 26,
+      name: 'Guns n Roses',
+      score: 32,
+      topic_id: 7,
+      user_id: 3
+    },
+    {
+      id: 27,
+      name: 'Def Leppard',
+      score: 12,
+      topic_id: 7,
+      user_id: 1
+    },
+    {
+      id: 28,
+      name: 'Ratt',
+      score: 2,
+      topic_id: 7,
+      user_id: 1
+    },
+    {
+      id: 29,
+      name: 'Stevie Ray Vaughn',
+      score: 78,
+      topic_id: 8,
+      user_id: 1
+    },
+    {
+      id: 30,
+      name: 'Jimi Hendrix',
+      score: 32,
+      topic_id: 8,
+      user_id: 3
+    },
+    {
+      id: 31,
+      name: 'Tosin Abasi',
+      score: 89,
+      topic_id: 8,
+      user_id: 1
+    },
+    {
+      id: 32,
+      name: 'Slash',
+      score: -2,
+      topic_id: 8,
+      user_id: 1
+    },
+    {
+      id: 33,
+      name: 'P.Y.T',
+      score: 58,
+      topic_id: 9,
+      user_id: 1
+    },
+    {
+      id: 34,
+      name: 'Billie Jean',
+      score: 32,
+      topic_id: 9,
+      user_id: 3
+    },
+    {
+      id: 35,
+      name: 'Thriller',
+      score: 89,
+      topic_id: 9,
+      user_id: 1
+    },
+    {
+      id: 36,
+      name: 'Bad',
+      score: -2,
+      topic_id: 9,
+      user_id: 1
+    },
+    {
+      id: 37,
+      name: 'Peyton Manning',
+      score: 65,
+      topic_id: 10,
+      user_id: 1
+    },
+    {
+      id: 38,
+      name: 'Tom Brady',
+      score: 31,
+      topic_id: 10,
+      user_id: 3
+    },
+    {
+      id: 39,
+      name: 'Tony Romo',
+      score: 99,
+      topic_id: 10,
+      user_id: 1
+    },
+    {
+      id: 40,
+      name: 'Eli Manning',
+      score: -22,
+      topic_id: 10,
+      user_id: 1
+    },
+    {
+      id: 41,
+      name: 'Nolan Ryan',
+      score: 65,
+      topic_id: 11,
+      user_id: 1
+    },
+    {
+      id: 42,
+      name: 'Cy Young',
+      score: 31,
+      topic_id: 11,
+      user_id: 3
+    },
+    {
+      id: 43,
+      name: 'Jake Arrieta',
+      score: 49,
+      topic_id: 11,
+      user_id: 1
+    },
+    {
+      id: 44,
+      name: 'Chris Carpenter',
+      score: -2,
+      topic_id: 11,
+      user_id: 1
+    },
+    {
+      id: 45,
+      name: 'Stone Cold Steve Austin',
+      score: 65,
+      topic_id: 12,
+      user_id: 1
+    },
+    {
+      id: 46,
+      name: 'CM Punk',
+      score: 31,
+      topic_id: 12,
+      user_id: 3
+    },
+    {
+      id: 47,
+      name: 'The Rock',
+      score: 49,
+      topic_id: 12,
+      user_id: 1
+    },
+    {
+      id: 48,
+      name: 'Santino Marella',
+      score: -2,
+      topic_id: 12,
+      user_id: 1
+    },
+    {
+      id: 49,
+      name: 'World of Warcraft',
+      score: 65,
+      topic_id: 13,
+      user_id: 1
+    },
+    {
+      id: 50,
+      name: 'Guild Wars 2',
+      score: 89,
+      topic_id: 13,
+      user_id: 3
+    },
+    {
+      id: 51,
+      name: 'Black Desert',
+      score: 29,
+      topic_id: 13,
+      user_id: 1
+    },
+    {
+      id: 52,
+      name: 'Elder Scrolls Online',
+      score: -23,
+      topic_id: 13,
+      user_id: 1
+    },
+    {
+      id: 53,
+      name: 'Ryu',
+      score: 55,
+      topic_id: 14,
+      user_id: 1
+    },
+    {
+      id: 54,
+      name: 'Ken',
+      score: 99,
+      topic_id: 14,
+      user_id: 3
+    },
+    {
+      id: 55,
+      name: 'Abel',
+      score: 23,
+      topic_id: 14,
+      user_id: 1
+    },
+    {
+      id: 56,
+      name: 'Blanka',
+      score: -3,
+      topic_id: 14,
+      user_id: 1
+    },
+    {
+      id: 57,
+      name: 'Counter-Strike',
+      score: 55,
+      topic_id: 15,
+      user_id: 1
+    },
+    {
+      id: 58,
+      name: 'Destiny',
+      score: 59,
+      topic_id: 15,
+      user_id: 3
+    },
+    {
+      id: 59,
+      name: 'Titanfall 2',
+      score: 13,
+      topic_id: 15,
+      user_id: 1
+    },
+    {
+      id: 60,
+      name: 'Call of Duty',
+      score: -32,
+      topic_id: 15,
+      user_id: 1
+    },
+    {
+      id: 61,
+      name: 'Washing your hands',
+      score: 55,
+      topic_id: 16,
+      user_id: 1
+    },
+    {
+      id: 62,
+      name: 'Flushing after you go',
+      score: 59,
+      topic_id: 16,
+      user_id: 3
+    },
+    {
+      id: 63,
+      name: 'No eye-contact',
+      score: 13,
+      topic_id: 16,
+      user_id: 1
+    },
+    {
+      id: 64,
+      name: 'Talking while pooping',
+      score: -32,
+      topic_id: 16,
+      user_id: 1
+    },
+    {
+      id: 65,
+      name: 'Using your blinker',
+      score: 51,
+      topic_id: 17,
+      user_id: 1
+    },
+    {
+      id: 66,
+      name: 'Waving at person behind you for letting you in a lane',
+      score: 89,
+      topic_id: 17,
+      user_id: 3
+    },
+    {
+      id: 67,
+      name: 'Not being on your phone',
+      score: 23,
+      topic_id: 17,
+      user_id: 1
+    },
+    {
+      id: 68,
+      name: 'Being on your phone',
+      score: -32,
+      topic_id: 17,
+      user_id: 1
+    },
+    {
+      id: 69,
+      name: 'Batman',
+      score: 51,
+      topic_id: 18,
+      user_id: 1
+    },
+    {
+      id: 70,
+      name: 'Iron Man',
+      score: 89,
+      topic_id: 18,
+      user_id: 3
+    },
+    {
+      id: 71,
+      name: 'Green Arrow',
+      score: 23,
+      topic_id: 18,
+      user_id: 1
+    },
+    {
+      id: 72,
+      name: 'Rick Flagg',
+      score: -32,
+      topic_id: 18,
       user_id: 1
     },
   ]

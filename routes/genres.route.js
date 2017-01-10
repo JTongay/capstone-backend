@@ -10,15 +10,18 @@ const Twitter = require('twitter');
 
 router.get('/', (req, res, next)=>{
   knex('genres').then((genre)=>{
+    console.log(req)
     res.json(genre);
   })
 })
 
-// router.post('/new', (req, res, next)=>{
-//
-//   console.log(req.body);
-//   // knex('genres').insert()
-// })
+router.post('/new', (req, res, next)=>{
+
+  knex('genres').insert({
+
+  })
+
+})
 
 var client = new Twitter({
   consumer_key: process.env.TWITTER_KEY,
