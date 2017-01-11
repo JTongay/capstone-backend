@@ -17,4 +17,14 @@ router.get('/', (req, res, next)=>{
 
 })
 
+router.get('/:id', (req, res, next)=>{
+
+  let topicId = req.params.id;
+
+  knex('topics').where('id', topicId).first().then((topic)=>{
+    res.json(topic)
+  })
+
+})
+
 module.exports = router;
