@@ -84,109 +84,109 @@ const data = {
   topics: [
     {
       id: 1,
-      title: 'Best Action Movies',
+      title: 'ACTION MOVIES',
       user_id: 6,
       genre_id: 1
     },
     {
       id: 2,
-      title: 'Best Animated Movies',
+      title: 'ANIMATED MOVIES',
       user_id: 6,
       genre_id: 1
     },
     {
       id: 3,
-      title: 'Best Comedy Movies',
+      title: 'COMEDY MOVIES',
       user_id: 6,
       genre_id: 1
     },
     {
       id: 4,
-      title: 'Best Burger Place',
+      title: 'BURGER PLACE',
       user_id: 6,
       genre_id: 2
     },
     {
       id: 5,
-      title: 'Best Chicken Place',
+      title: 'CHICKEN PLACE',
       user_id: 6,
       genre_id: 2
     },
     {
       id: 6,
-      title: 'Best Cereal',
+      title: 'CEREAL',
       user_id: 6,
       genre_id: 2
     },
     {
       id: 7,
-      title: 'Best 80s Metal Band',
+      title: "80'S METAL BAND",
       user_id: 6,
       genre_id: 3
     },
     {
       id: 8,
-      title: 'Best Guitar Players',
+      title: 'GUITAR PLAYERS',
       user_id: 6,
       genre_id: 3
     },
     {
       id: 9,
-      title: 'Best Michael Jackson Songs',
+      title: 'MICHAEL JACKSON SONGS',
       user_id: 6,
       genre_id: 3
     },
     {
       id: 10,
-      title: 'Best NFL Quarterbacks All-Time',
+      title: 'NFL QUARTERBACKS',
       user_id: 6,
       genre_id: 4
     },
     {
       id: 11,
-      title: 'Best MLB Pitcher All-Time',
+      title: 'MLB PITCHERS',
       user_id: 6,
       genre_id: 4
     },
     {
       id: 12,
-      title: 'Best WWE/WWF Wrestler All-Time',
+      title: 'WWE/WWF WRESTLERS',
       user_id: 6,
       genre_id: 4
     },
     {
       id: 13,
-      title: 'Best MMORPG',
+      title: 'MMORPG',
       user_id: 6,
       genre_id: 5
     },
     {
       id: 14,
-      title: 'Best Street Fighter Character',
+      title: 'STREET FIGHTER CHARACTERS',
       user_id: 6,
       genre_id: 5
     },
     {
       id: 15,
-      title: 'Best FPS',
+      title: 'FPS',
       user_id: 6,
       genre_id: 5
     },
     {
       id: 16,
-      title: 'Best Public Restroom Etiquette',
+      title: 'PUBLIC RESTROOM ETIQUETTE',
       user_id: 6,
       genre_id: 6
     },
     {
       id: 17,
-      title: 'Best Driving Etiquette',
+      title: 'DRIVING ETIQUETE',
       user_id: 6,
       genre_id: 6
     },
     {
       id: 18,
-      title: 'Best Comic-Book Characters Without Super Powers',
+      title: 'COMIC BOOK CHARACTERS WITHOUT SUPER POWERS',
       user_id: 6,
       genre_id: 6
     },
@@ -194,126 +194,126 @@ const data = {
   subjects: [
     {
       id: 1,
-      name: 'Die Hard',
+      name: 'DIE HARD',
       score: 50,
       topic_id: 1,
       user_id: 1
     },
     {
       id: 2,
-      name: 'The Expendables',
+      name: 'THE EXPENDABLES',
       score: 23,
       topic_id: 1,
       user_id: 3
     },
     {
       id: 3,
-      name: 'Predator',
+      name: 'PREDATOR',
       score: 10,
       topic_id: 1,
       user_id: 2
     },
     {
       id: 4,
-      name: 'Snakes on a Plane',
+      name: 'SNAKES ON A PLANE',
       score: -2.5,
       topic_id: 1,
       user_id: 1
     },
     {
       id: 5,
-      name: 'Toy Story',
+      name: 'TOY STORY',
       score: 80,
       topic_id: 2,
       user_id: 1
     },
     {
       id: 6,
-      name: 'Toy Story 2',
+      name: 'TOY STORY 2',
       score: 13,
       topic_id: 2,
       user_id: 2
     },
     {
       id: 7,
-      name: 'The South Park Movie',
+      name: 'THE SOUTH PARK MOVIE',
       score: 10,
       topic_id: 2,
       user_id: 2
     },
     {
       id: 8,
-      name: 'Antz',
+      name: 'ANTZ',
       score: -12,
       topic_id: 2,
       user_id: 1
     },
     {
       id: 9,
-      name: 'Austin Powers',
+      name: 'AUSTIN POWERS',
       score: 30,
       topic_id: 3,
       user_id: 1
     },
     {
       id: 10,
-      name: 'Dumb and Dumber',
+      name: 'DUMB AND DUMBER',
       score: 53,
       topic_id: 3,
       user_id: 3
     },
     {
       id: 11,
-      name: 'Step Brothers',
+      name: 'STEP BROTHERS',
       score: 110.5,
       topic_id: 3,
       user_id: 2
     },
     {
       id: 12,
-      name: 'Anchorman 2',
+      name: 'ANCHORMAN 2',
       score: 2,
       topic_id: 3,
       user_id: 1
     },
     {
       id: 13,
-      name: 'Whataburger',
+      name: 'WHATABURGER',
       score: 90,
       topic_id: 4,
       user_id: 1
     },
     {
       id: 14,
-      name: 'Hopdoddy',
+      name: 'HOPDODDY',
       score: 67,
       topic_id: 4,
       user_id: 3
     },
     {
       id: 15,
-      name: 'Sonic',
+      name: 'SONIC',
       score: 10,
       topic_id: 4,
       user_id: 2
     },
     {
       id: 16,
-      name: 'Burger King',
+      name: 'BURGER KING',
       score: -72,
       topic_id: 4,
       user_id: 2
     },
     {
       id: 17,
-      name: 'Popeyes',
+      name: 'POPEYES',
       score: 72,
       topic_id: 5,
       user_id: 1
     },
     {
       id: 18,
-      name: 'Chick-fil-a',
+      name: 'CHICK-FIL-A',
       score: 52,
       topic_id: 5,
       user_id: 3
@@ -334,84 +334,84 @@ const data = {
     },
     {
       id: 21,
-      name: 'Cinnamon Toast Crunch',
+      name: 'CINNAMON TOAST CRUNCH',
       score: 112,
       topic_id: 6,
       user_id: 1
     },
     {
       id: 22,
-      name: 'Golden Grahams',
+      name: 'GOLDEN GRAHAMS',
       score: 82,
       topic_id: 6,
       user_id: 3
     },
     {
       id: 23,
-      name: 'Golden Ohs',
+      name: "GOLDEN OH'S",
       score: 12,
       topic_id: 6,
       user_id: 1
     },
     {
       id: 24,
-      name: 'Raisin Bran',
+      name: 'RAISIN BRAN',
       score: -92,
       topic_id: 6,
       user_id: 1
     },
     {
       id: 25,
-      name: 'Van Halen',
+      name: 'VAN HALEN',
       score: 67,
       topic_id: 7,
       user_id: 1
     },
     {
       id: 26,
-      name: 'Guns n Roses',
+      name: 'GUNS N ROSES',
       score: 32,
       topic_id: 7,
       user_id: 3
     },
     {
       id: 27,
-      name: 'Def Leppard',
+      name: 'DEF LEPPARD',
       score: 12,
       topic_id: 7,
       user_id: 1
     },
     {
       id: 28,
-      name: 'Ratt',
+      name: 'RATT',
       score: 2,
       topic_id: 7,
       user_id: 1
     },
     {
       id: 29,
-      name: 'Stevie Ray Vaughn',
+      name: 'STEVIE RAY VAUGHN',
       score: 78,
       topic_id: 8,
       user_id: 1
     },
     {
       id: 30,
-      name: 'Jimi Hendrix',
+      name: 'JIMI HENDRIX',
       score: 32,
       topic_id: 8,
       user_id: 3
     },
     {
       id: 31,
-      name: 'Tosin Abasi',
+      name: 'TOSIN ABASI',
       score: 89,
       topic_id: 8,
       user_id: 1
     },
     {
       id: 32,
-      name: 'Slash',
+      name: 'SLASH',
       score: -2,
       topic_id: 8,
       user_id: 1
@@ -425,273 +425,273 @@ const data = {
     },
     {
       id: 34,
-      name: 'Billie Jean',
+      name: 'BILLIE JEAN',
       score: 32,
       topic_id: 9,
       user_id: 3
     },
     {
       id: 35,
-      name: 'Thriller',
+      name: 'THRILLER',
       score: 89,
       topic_id: 9,
       user_id: 1
     },
     {
       id: 36,
-      name: 'Bad',
+      name: 'BAD',
       score: -2,
       topic_id: 9,
       user_id: 1
     },
     {
       id: 37,
-      name: 'Peyton Manning',
+      name: 'PEYTON MANNING',
       score: 65,
       topic_id: 10,
       user_id: 1
     },
     {
       id: 38,
-      name: 'Tom Brady',
+      name: 'TOM BRADY',
       score: 31,
       topic_id: 10,
       user_id: 3
     },
     {
       id: 39,
-      name: 'Tony Romo',
+      name: 'TONY ROMO',
       score: 99,
       topic_id: 10,
       user_id: 1
     },
     {
       id: 40,
-      name: 'Eli Manning',
+      name: 'ELI MANNING',
       score: -22,
       topic_id: 10,
       user_id: 1
     },
     {
       id: 41,
-      name: 'Nolan Ryan',
+      name: 'NOLAN RYAN',
       score: 65,
       topic_id: 11,
       user_id: 1
     },
     {
       id: 42,
-      name: 'Cy Young',
+      name: 'CY YOUNG',
       score: 31,
       topic_id: 11,
       user_id: 3
     },
     {
       id: 43,
-      name: 'Jake Arrieta',
+      name: 'JAKE ARRIETA',
       score: 49,
       topic_id: 11,
       user_id: 1
     },
     {
       id: 44,
-      name: 'Chris Carpenter',
+      name: 'CHRIS CARPENTER',
       score: -2,
       topic_id: 11,
       user_id: 1
     },
     {
       id: 45,
-      name: 'Stone Cold Steve Austin',
+      name: 'STONE COLD STEVE AUSTIN',
       score: 65,
       topic_id: 12,
       user_id: 1
     },
     {
       id: 46,
-      name: 'CM Punk',
+      name: 'CM PUNK',
       score: 31,
       topic_id: 12,
       user_id: 3
     },
     {
       id: 47,
-      name: 'The Rock',
+      name: 'THE ROCK',
       score: 49,
       topic_id: 12,
       user_id: 1
     },
     {
       id: 48,
-      name: 'Santino Marella',
+      name: 'SANTINO MARELLA',
       score: -2,
       topic_id: 12,
       user_id: 1
     },
     {
       id: 49,
-      name: 'World of Warcraft',
+      name: 'WORLD OF WARCRAFT',
       score: 65,
       topic_id: 13,
       user_id: 1
     },
     {
       id: 50,
-      name: 'Guild Wars 2',
+      name: 'GUILD WARS 2',
       score: 89,
       topic_id: 13,
       user_id: 3
     },
     {
       id: 51,
-      name: 'Black Desert',
+      name: 'BLACK DESERT',
       score: 29,
       topic_id: 13,
       user_id: 1
     },
     {
       id: 52,
-      name: 'Elder Scrolls Online',
+      name: 'ELDER SCROLLS ONLINE',
       score: -23,
       topic_id: 13,
       user_id: 1
     },
     {
       id: 53,
-      name: 'Ryu',
+      name: 'RYU',
       score: 55,
       topic_id: 14,
       user_id: 1
     },
     {
       id: 54,
-      name: 'Ken',
+      name: 'KEN',
       score: 99,
       topic_id: 14,
       user_id: 3
     },
     {
       id: 55,
-      name: 'Abel',
+      name: 'ABEL',
       score: 23,
       topic_id: 14,
       user_id: 1
     },
     {
       id: 56,
-      name: 'Blanka',
+      name: 'BLANKA',
       score: -3,
       topic_id: 14,
       user_id: 1
     },
     {
       id: 57,
-      name: 'Counter-Strike',
+      name: 'COUNTER-STRIKE',
       score: 55,
       topic_id: 15,
       user_id: 1
     },
     {
       id: 58,
-      name: 'Destiny',
+      name: 'DESTINY',
       score: 59,
       topic_id: 15,
       user_id: 3
     },
     {
       id: 59,
-      name: 'Titanfall 2',
+      name: 'TITANFALL 2',
       score: 13,
       topic_id: 15,
       user_id: 1
     },
     {
       id: 60,
-      name: 'Call of Duty',
+      name: 'CALL OF DUTY',
       score: -32,
       topic_id: 15,
       user_id: 1
     },
     {
       id: 61,
-      name: 'Washing your hands',
+      name: 'WASHING YOUR HANDS',
       score: 55,
       topic_id: 16,
       user_id: 1
     },
     {
       id: 62,
-      name: 'Flushing after you go',
+      name: 'FLUSHING AFTER YOU GO',
       score: 59,
       topic_id: 16,
       user_id: 3
     },
     {
       id: 63,
-      name: 'No eye-contact',
+      name: 'NO EYE-CONTACT',
       score: 13,
       topic_id: 16,
       user_id: 1
     },
     {
       id: 64,
-      name: 'Talking while pooping',
+      name: 'TALKING WHILE POOPING',
       score: -32,
       topic_id: 16,
       user_id: 1
     },
     {
       id: 65,
-      name: 'Using your blinker',
+      name: 'USING YOUR BLINKER',
       score: 51,
       topic_id: 17,
       user_id: 1
     },
     {
       id: 66,
-      name: 'Waving at person behind you for letting you in a lane',
+      name: 'WAVING',
       score: 89,
       topic_id: 17,
       user_id: 3
     },
     {
       id: 67,
-      name: 'Not being on your phone',
+      name: 'BEING OFF YOUR PHONE',
       score: 23,
       topic_id: 17,
       user_id: 1
     },
     {
       id: 68,
-      name: 'Being on your phone',
+      name: 'BEING ON YOUR PHONE',
       score: -32,
       topic_id: 17,
       user_id: 1
     },
     {
       id: 69,
-      name: 'Batman',
+      name: 'BATMAN',
       score: 51,
       topic_id: 18,
       user_id: 1
     },
     {
       id: 70,
-      name: 'Iron Man',
+      name: 'IRON MAN',
       score: 89,
       topic_id: 18,
       user_id: 3
     },
     {
       id: 71,
-      name: 'Green Arrow',
+      name: 'GREEN ARROW',
       score: 23,
       topic_id: 18,
       user_id: 1
     },
     {
       id: 72,
-      name: 'Rick Flagg',
+      name: 'RICK FLAGG',
       score: -32,
       topic_id: 18,
       user_id: 1

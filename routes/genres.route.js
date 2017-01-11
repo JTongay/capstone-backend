@@ -52,27 +52,6 @@ router.delete('/:id', (req, res, next)=>{
 
 })
 
-var client = new Twitter({
-  consumer_key: process.env.TWITTER_KEY,
-  consumer_secret: process.env.TWITTER_SECRET,
-  access_token_key: process.env.ACCESS_TOKEN,
-  access_token_secret: process.env.ACCESS_SECRET
-})
-
-var params = {screen_name: 'PowerRankingApp'}
-
-function getTwitter(req, res, next) {
-  client.get('statuses/mentions_timeline', params, (err, tweets, response)=>{
-    if(!err){
-      res.json(tweets)
-    }
-  })
-}
-
-router.get('/twitter', getTwitter,(req, res, next)=>{
-  console.log("booyah");
-  next()
-})
 
 router.get('/:id', (req, res, next)=>{
 
