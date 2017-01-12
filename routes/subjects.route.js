@@ -14,7 +14,7 @@ router.get('/', (req, res, next)=>{
   knex('subjects').where('topic_id', topicId).then((subject)=>{
     res.json(subject)
   })
-  
+
 })
 
 router.get('/top', (req, res, next)=>{
@@ -34,6 +34,39 @@ router.get('/worst', (req, res, next)=>{
   knex('subjects').where('topic_id', topicId).orderBy('score', 'asc').limit(1).then((subject)=>{
     res.json(subject[0])
   })
+
+})
+
+router.post('/vote', (req, res, next)=>{
+
+  let topicId = req.params.topic_id;
+  let userId = req.params.user_id;
+  let reqFirst = req.body.first_subject_id;
+  let reqSecond = req.body.second_subject_id;
+  let reqThird = req.body.third_subject_id;
+  let reqGarbage = req.body.garbage_subject_id;
+
+
+  knex('user_voted').insert({
+    user_id: userId,
+    topic_id: topicId,
+    first_subject_id: reqFirst,
+    second_subject_id: reqSecond,
+    third_subject_id: reqThird,
+    garbage_subject_id: reqGarbage
+  }).then((vote)=>[
+    knex('subjects').where('id', reqFirst).first().increment('score', 3).then((first)=>{
+      knex('subjects').where('id', reqSecond).first().increment('score', 2).then((second)=>{
+        knex('subjects').where('id', reqThird).first().increment('score', 1).then((third)=>{
+          knex('subjects').where('id', reqGarbage).first().decrement('score', 3).then((garbage)=>{
+            res.json({
+              status: 'holy shit'
+            })
+          })
+        })
+      })
+    })
+  ])
 
 })
 
