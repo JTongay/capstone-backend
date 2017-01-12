@@ -4,7 +4,7 @@ const dummy_data = require('../db/dummy.data');
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('users').truncate()
+  return knex('users').del()
     .then(function () {
       return Promise.all([
         // Inserts seed entries
@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
       ]);
     })
     .then(function (){
-      return knex('genres').truncate()
+      return knex('genres').del()
         .then(function () {
           return Promise.all([
             // Inserts seed entries
@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
         })
     })
     .then(function (){
-      return knex('topics').truncate()
+      return knex('topics').del()
         .then(function () {
           return Promise.all([
             // Inserts seed entries
