@@ -20,5 +20,23 @@ exports.seed = function(knex, Promise) {
           ]);
         })
     })
+    .then(function (){
+      return knex.raw("TRUNCATE topics CASCADE")
+        .then(function () {
+          return Promise.all([
+            // Inserts seed entries
+            knex('topics').insert(dummy_data.topics)
+          ]);
+        })
+    })
+    .then(function (){
+      return knex.raw("TRUNCATE subjects CASCADE")
+        .then(function () {
+          return Promise.all([
+            // Inserts seed entries
+            knex('subjects').insert(dummy_data.subjects)
+          ]);
+        })
+    })
 };
 //what
