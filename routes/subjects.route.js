@@ -76,7 +76,7 @@ router.post('/new', (req, res, next)=>{
   let userId = req.params.user_id;
 
   knex('subjects').insert({
-    name: req.body.name,
+    name: req.body.name.toUpperCase(),
     topic_id: topicId,
     user_id: userId
   }).then((subject)=>{
