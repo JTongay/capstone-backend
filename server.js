@@ -41,38 +41,6 @@ var client = new Twitter({
   access_token_secret: process.env.ACCESS_SECRET
 })
 
-var params = {screen_name: 'PowerRankingApp'}
-
-function getTwitter(req, res, next) {
-  client.get('statuses/mentions_timeline', params, (err, tweets, response)=>{
-    if(!err){
-      console.log(tweets);
-      // var tweetId = tweets[0].id
-      // var newTweetText = tweets[0].text;
-      // var newTweetTopic = tweets[0].entities.hashtags[0].text
-      // var newTweetSubject = tweets[0].entities.hashtags[1].text
-      // var newTweetTopicFormat = newTweetTopic.split('_').join(' ').toUpperCase()
-      // var newTweetSubjectFormat = newTweetSubject.split('_').join(' ').toUpperCase()
-      // console.log(newTweetTopicFormat);
-      // console.log(newTweetSubjectFormat);
-      // var analysisScore = sentiment(newTweetText)
-      // console.log(analysisScore.score)
-      res.json(tweets)
-
-      // will insert score if tweet hasnt been tracked
-      // knex('subjects').where('name', newTweetSubjectFormat).increment('score', analysisScore.score).returning('*').then((score)=>{
-      //   knex('tracked_tweets').insert({
-      //     tweet_id: tweetId
-      //   }).returning('*').then((tweet)=>{
-      //     console.log(score)
-      //     console.log(tweet)
-      //     res.json(tweets)
-      //     // next()
-      //   })
-      // })
-    }
-  })
-}
 
 function testStream(){
 
@@ -108,21 +76,6 @@ function testStream(){
 }
 
 testStream()
-
-// getTwitter()
-
-// app.use(function(req, res, next){
-//   client.stream('statuses/mentions_timeline', params, (err, tweets, response)=>{
-//     if(!err){
-//       res.json(tweets)
-//     }
-//   })
-// })
-
-app.get('/twitter', getTwitter,(req, res, next)=>{
-  console.log("booyah");
-  next()
-})
 
 // Use Routes
 

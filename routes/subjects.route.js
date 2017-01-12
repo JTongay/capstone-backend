@@ -7,6 +7,16 @@ const router = express.Router({
 const knex = require('../db/knex');
 // const bcrypt = require('bcrypt');
 
+router.get('/', (req, res, next)=>{
+
+  let topicId = req.params.topic_id
+
+  knex('subjects').where('topic_id', topicId).then((subject)=>{
+    res.json(subject)
+  })
+  
+})
+
 router.get('/top', (req, res, next)=>{
 
   let topicId = req.params.topic_id;
