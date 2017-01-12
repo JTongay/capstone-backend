@@ -47,7 +47,7 @@ router.post('/vote', (req, res, next)=>{
   let reqGarbage = req.body.garbage;
 
 
-  knex('user_voted').insert({
+  knex('user_votes').insert({
     user_id: userId,
     topic_id: topicId,
     first_subject_id: reqFirst,
