@@ -41,10 +41,10 @@ router.post('/vote', (req, res, next)=>{
 
   let topicId = req.params.topic_id;
   let userId = req.params.user_id;
-  let reqFirst = req.body.first_subject_id;
-  let reqSecond = req.body.second_subject_id;
-  let reqThird = req.body.third_subject_id;
-  let reqGarbage = req.body.garbage_subject_id;
+  let reqFirst = req.body.first;
+  let reqSecond = req.body.second;
+  let reqThird = req.body.third;
+  let reqGarbage = req.body.garbage;
 
 
   knex('user_voted').insert({
