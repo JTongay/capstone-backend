@@ -60,7 +60,7 @@ router.post('/vote', (req, res, next)=>{
         knex('subjects').where('id', reqThird).first().increment('score', 1).then((third)=>{
           knex('subjects').where('id', reqGarbage).first().decrement('score', 3).then((garbage)=>{
             res.json({
-              status: 'holy shit'
+              status: 'Vote Submitted'
             })
           })
         })
@@ -79,7 +79,7 @@ router.post('/new', (req, res, next)=>{
     name: req.body.name,
     topic_id: topicId,
     user_id: userId
-  }).returning('*').then((subject)=>{
+  }).then((subject)=>{
     res.json(subject)
   })
 
