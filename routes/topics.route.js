@@ -27,4 +27,19 @@ router.get('/:id', (req, res, next)=>{
 
 })
 
+router.post('/new', (req, res, next)=>{
+
+  let genreId = req.params.genre_id;
+
+  knex('topics').insert({
+    title: req.body.title.toUpperCase(),
+    genre_id: genreId
+  }).then((topic)=>{
+    res.json(topic)
+  })
+
+
+
+})
+
 module.exports = router;
