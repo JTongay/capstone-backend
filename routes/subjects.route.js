@@ -79,7 +79,7 @@ router.post('/new', (req, res, next)=>{
     name: req.body.name.toUpperCase(),
     topic_id: topicId,
     user_id: userId
-  }).returning('*').first().then((subject)=>{
+  }).returning('*').then((subject)=>{
     res.json(subject)
   })
 
