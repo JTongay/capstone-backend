@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
         .then(function () {
           return Promise.all([
             // Inserts seed entries
-            knex('topics').insert(dummy_data.subjects)
+            knex('subjects').insert(dummy_data.subjects)
           ]);
         })
     })
