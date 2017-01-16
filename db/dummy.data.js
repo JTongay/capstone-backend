@@ -25,7 +25,6 @@ const data = {
       role: 'user'
     },
     {
-      id: 4,
       username: 'user4',
       password_digest: hashed,
       email: 'user4@gmail.com',
