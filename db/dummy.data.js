@@ -7,21 +7,18 @@ const data = {
   test: [{test: true}],
   users: [
     {
-      id: 1,
       username: 'user1',
       password_digest: hashed,
       email: 'user1@gmail.com',
       role: 'user'
     },
     {
-      id: 2,
       username: 'user2',
       password_digest: hashed,
       email: 'user2@gmail.com',
       role: 'user'
     },
     {
-      id: 3,
       username: 'user3',
       password_digest: hashed,
       email: 'user3@gmail.com',
@@ -35,14 +32,12 @@ const data = {
       role: 'user'
     },
     {
-      id: 5,
       username: 'user5',
       password_digest: hashed,
       email: 'user5@gmail.com',
       role: 'user'
     },
     {
-      id: 6,
       username: 'admin',
       password_digest: hashed,
       email: 'admin@gmail.com',

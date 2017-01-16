@@ -53,10 +53,7 @@ function testStream(){
     var newTweetSubject = tweets.entities.hashtags[1].text
     var newTweetTopicFormat = newTweetTopic.split('_').join(' ').toUpperCase()
     var newTweetSubjectFormat = newTweetSubject.split('_').join(' ').toUpperCase()
-    console.log(newTweetTopicFormat);
-    console.log(newTweetSubjectFormat);
     var analysisScore = sentiment(newTweetText)
-    console.log(analysisScore.score)
 
     knex('subjects').where('name', newTweetSubjectFormat).first().then((result)=>{
 
