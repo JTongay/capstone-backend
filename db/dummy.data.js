@@ -2,7 +2,6 @@
 
 const bcrypt = require('bcrypt');
 const hashed = bcrypt.hashSync('password', 10);
-
 const data = {
   test: [{test: true}],
   users: [
